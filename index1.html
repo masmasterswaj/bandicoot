@@ -1,0 +1,331 @@
+<html>
+    <head>
+        <title>CMS v.6.0</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Language" content="pl" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <script src="js/jquery-1.11.3.min.js"></script>
+
+        <!-- Add mousewheel plugin (this is optional) -->
+        <script type="text/javascript" src="js/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+        <!-- Add fancyBox -->
+        <link rel="stylesheet" href="js/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+        <script type="text/javascript" src="js/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+        <style>
+            @font-face {
+                font-family: Normalna;
+                src: url('../images/fonts/KlavikaBasic-Regular.otf');
+                }
+            @font-face {
+                font-family: Pogrubiona;
+                src: url('../images/fonts/KlavikaBasic-Bold.otf');
+            }
+            @font-face {
+                font-family: Cienka;
+                src: url('../images/fonts/KlavikaBasic-Light.otf');
+            }
+             @font-face {
+                font-family: Klavika;
+                src: url('../images/fonts/KlavikaBasic-Bold.otf');
+                font-weight:bold;
+            }
+            body {
+                font-family: Cienka,sans-serif;
+                font-size: 16px;
+                color: aliceblue;
+                margin: 0px;
+                background-color: #3a3a3a;
+                background-image: url(images/tlo.png);
+                background-size: 80% auto;
+                background-position: 30% 40%;
+                background-repeat: no-repeat;
+
+            }
+
+            img.bg {
+                /* Ustawienie regul do wypeniania tla */
+                min-height: 100%;
+                min-width: 1024px;
+                /* Ustawienie proporcjonalnego skalowania */
+                width: 100%;
+                height: auto;
+
+                margin:-30% -10%;
+                /* Ustawienie pozycji */
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 3;
+                }
+            @media screen and (max-width: 1024px) { /* Ustaiwnia dla konkretnego tla */
+                img.bg {
+                    left: 50%;
+                    margin-left: -512px;   /* 50% */
+                    z-index: 1;
+                    }
+                }
+            #banner1 {
+                overflow: hidden;
+                width: 100%;
+                height: 300px;
+                background: #070707;
+                z-index: 0;
+                border-bottom: 1px solid;
+                border-bottom-color: #040404;
+            }
+            #banner1 img {
+                /* Ustawienie regul do wypeniania tla */
+                width: 100%;
+                height: auto;
+
+                margin:-20% 0px 0px 0px;
+                /* Ustawienie pozycji */
+                #position: fixed;
+                top: 0;
+                left: 0;
+
+                background-image: url(images/tlologo.jpg);
+                z-index: 1;
+                opacity: 0.05;
+
+            }
+            #pasekgorny {
+                width: 100%;
+                height: 40px;
+                border: 1px solid;
+                border-bottom-color: #0e0e0e;
+                border-top-color: #1f1f1f;
+                background-color: #333333;
+                z-index: 3;
+            }
+            #menu {
+                width: 100%;
+                height: 40px;
+
+                z-index: -1;
+            }
+
+            p {
+                width:100%;
+                margin: 10% auto;
+            }
+            #logo {
+                background-image: url(images/logo.png);
+                width: 291px;
+                height: 416px;
+                position: absolute;
+                left:6%;
+                top:15%;
+                #margin:-40px 0px 0px 50px;
+            }
+            #ponadbanner{
+                width: 100%;
+                height: 30%;
+                background-color: #000000;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                opacity: 0.3;
+            }
+            #napis {
+                position: absolute;
+                float: right;
+                margin: 190px 0px 0px 380px;;
+                color: #828181;
+                font-size: 18px;
+                line-height: 25px;
+            }
+            /* wygląd głównego elementu - ol */
+            ol {
+                list-style-type:none;
+                padding:0;
+                margin:0;
+                #background-color:#FFF;
+                font-size:18px;
+                height:2em;
+                line-height:2em;
+                #text-align:center;
+                #overflow: hidden;
+            }
+
+            /* wygląd wszystkich elementów - a - znajdujących się w elemencie - ol */
+            ol a {
+                display:block;
+                text-decoration:none;
+                color:#b1bfc9;
+                padding:0px 25px;
+            }
+
+            /* wygląd elementów - li - wszystkich dzieci elementu - ol */
+            ol > li {
+                float:left;
+                margin-left:3px;
+                background-color:#000000;
+                height:40px;
+                line-height: 40px;
+                border-radius: 0px 0px 3px 3px;
+                opacity: 0.5;
+            }
+
+            /* wygląd elementu - li - pierwszego dziecka elementu - ol */
+            ol > li:first-child {
+                margin-left:400px;
+            }
+            ol > li:last-child {
+                width: auto;
+                height: 40px;
+
+            }
+
+            /* wygląd elementów - li - wszystkich dzieci elementu - ol - po najechaniu kursorem myszki na element - li */
+            ol > li:hover {
+                background-color:#245313;
+                opacity: 1;
+
+            }
+
+            /* wygląd elementu - a - dziecka elementu - li - będącego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
+            ol > li:hover > a {
+                color:#cdd7de;
+            }
+
+            /* wygląd elementu - ul - dziecka elementu - li - będącego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
+            ol > li:hover > ul {
+                display:block;
+            }
+
+            /* ------------------------CZĘŚĆ-ROZWIJANA-MENU------------------------ */
+
+            /* wygląd głównych rozwijanych elementów - ul */
+            ol > li > ul {
+                display:none;
+                list-style-type:none;
+                padding:5px 0px 0px 0px;
+                margin:0px 0px 0px 0px;
+                position: absolute;
+            }
+
+            /* wygląd elementu - li - w części rozwijanej */
+            ol > li > ul > li {
+                background-color:#344657;
+                padding:10px 30px 10px 20px;
+                border-top:1px solid #475664;
+            }
+
+            /* wygląd elementu - a - w części rozwijanej */
+            ol > li > ul > li > a {
+
+                display: block;
+                clear: both;
+                #padding:0px 30px 0px 10px;
+            }
+
+            /* wygląd elementu - li - w części rozwijanej, po najechaniu kursorem myszki na dany element - li */
+            ol > li > ul > li:hover {
+                background-color:#c74044;
+            }
+
+            /* wygląd elementu - a - w części rozwijanej, po najechaniu kursorem myszki na element - li */
+            ol > li > ul > li:hover > a {
+                color:#f0bfc1;
+            }
+            ol > li > ul > .html {
+                width: 500px;
+                height: auto;
+                margin: 0px 0px 0px -100px;
+                background: #ecf1f7;
+                line-height:normal;
+                padding: 20px;
+                text-align: justify;
+                border: 1px solid #a1b0c1;
+                border-radius: 3px;
+            }
+             ol > li > ul > .html:hover {
+                background: #ecf1f7;
+            }
+            /*
+            p.glowny {
+                #border:3px solid #FDD700;
+
+                width:100%;
+                height:300px;
+                #padding:15px;
+                display:table-cell;
+                vertical-align:center;
+                z-index: 2;
+
+
+              }
+            */
+        </style>
+    </head>
+
+    <body>
+        <script>
+        $(document).ready(function() {
+            // ----- LOGO POZYCJA ---------------------------------------------------
+            $(window).resize(myHandler);
+
+            function myHandler() {
+                var xwin = window.innerWidth||document.body.clientWidth;
+                var ywin = window.innerHeight||document.body.clientHeight;
+                $('#dupa').html('x:' +  xwin + ' y:' + ywin);
+            }
+            $(".various").fancybox({
+                //maxWidth	: 800,
+                //maxHeight	: 600,
+                fitToView	: false,
+                width		: '95%',
+                height		: '95%',
+                autoSize	: false,
+                closeClick	: false,
+
+                openEffect  : 'fade',
+				closeEffect : 'fade',
+
+				//openEffect : 'elastic',
+				openSpeed  : 500,
+
+				//closeEffect : 'elastic',
+				closeSpeed  : 500,
+            });
+        });
+        </script>
+        <!-- BANER --------------------------------------------------------------------- -->
+        <div id="ponadbanner"></div>
+        <div id="logo"></div>
+        <p class="glowny">
+
+            <div id="pasekgorny"></div>
+            <div id="napis">
+                <span id="dupa"></span>
+                <span><span style="color:#235212;font-family:Pogrubiona">Przed</span>
+                    odsłuchaniem zapoznaj się z treścią ulotki dołączonej<br />
+                    do opakowania bądź skonsultuj sie z psychiatrą lub psychoterapeutą<br />
+                    gdyż każdy dźwięk tu zagrany zagraża twojemu życiu lub zdrowiu</span>
+            </div>
+
+            <div id="banner1">
+                <img src="images/tlologo.jpg" />
+            </div>
+            <div id="menu">
+                <ol>
+                    <li><a class="various" data-fancybox-type="iframe" href="#">HOME</a></li>
+                    <li><a href="#">BIOGRAFIA</a></li>
+                    <li><a href="#">MEDIA</a></li>
+                    <li><a href="#">KALENDARZ</a></li>
+                    <li><a href="#">KONTAKT</a></li>
+                    <li></li>
+                </ol>
+            </div>
+            <div id="pasekmenu"></div>
+        </p>
+
+
+    </body>
+</html>

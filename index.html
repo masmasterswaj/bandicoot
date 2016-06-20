@@ -1,0 +1,347 @@
+<html>
+    <head>
+        <title>Bandicoot zespół</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Language" content="pl" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <script src="js/jquery-1.11.3.min.js"></script>
+
+        <!-- Add mousewheel plugin (this is optional) -->
+        <script type="text/javascript" src="js/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+        <!-- Add fancyBox -->
+        <link rel="stylesheet" href="js/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+        <script type="text/javascript" src="js/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+        <style>
+            @font-face {
+                font-family: Normalna;
+                src: url('fonts/KlavikaBasic-Regular.otf');
+                }
+            @font-face {
+                font-family: Pogrubiona;
+                src: url('fonts/KlavikaBasic-Bold.otf');
+            }
+            @font-face {
+                font-family: Cienka;
+                src: url('fonts/KlavikaBasic-Light.otf');
+            }
+             @font-face {
+                font-family: Klavika;
+                src: url('fonts/KlavikaBasic-Bold.otf');
+                font-weight:bold;
+            }
+            body {
+                font-family: Cienka,sans-serif;
+                font-size: 16px;
+                color: aliceblue;
+                height: 100%;
+                margin: 0px;
+                padding: 0px;
+                background-color: #3a3a3a;
+                background-image: url(images/tlo3a.jpg);
+                background-size: 1920px 1200px;
+                background-position: 50% 50%;
+                background-repeat: no-repeat;
+
+            }
+            .fancybox-skin {
+                background: #000;
+            }
+            #lewy{
+                width: 45%;
+                height: 100%;
+                float: left;
+            }
+            #prawy{
+                width: 55%;
+                height: 100%;
+                float: right;
+                background: #000000;
+                #opacity: 1;
+                overflow:hidden;
+
+            }
+            #tlo {
+                opacity: 0.1;
+                width: auto;
+                height: 100%;
+
+                margin-left: 1px;
+                /* Ustawienie pozycji */
+                #position: fixed;
+                top: 0;
+                left: 0;
+            }
+            #logo {
+                position: absolute;
+                top: 10%;
+                opacity: 0.99;
+                margin-left: 40px;
+                z-index: 5;
+            }
+            #menu {
+                width: 348px;
+                height: 400px;
+                margin:20% 0px 0px 0px;
+                float: right;
+                #background: #000;
+            }
+            #menu .m1 {
+                width: 300px;
+                height: 60px;
+                background: #000000;
+                float: right;
+                text-align: right;
+                padding-right: 30px;
+                line-height: 60px;
+                margin-right: 10px;
+                margin-bottom: 10px;
+                opacity: 0.5;
+                color: #9d9b99;
+                -webkit-transition: all 500ms ease-out;
+                -moz-transition: all 500ms ease-out;
+                -ms-transition: all 500ms ease-out;
+                -o-transition: all 500ms ease-out;
+                transition: all 500ms ease-out;
+
+            }
+            #menu a:hover .m1 {
+                width: 300px;
+                height: 60px;
+                background: #628f11;
+                float: right;
+                text-align: right;
+                padding-right: 30px;
+                line-height: 60px;
+                margin-right: 0px;
+                margin-bottom: 10px;
+                opacity: 1;
+                color: #fff;
+                -webkit-transition: all 500ms ease-out;
+                -moz-transition: all 500ms ease-out;
+                -ms-transition: all 500ms ease-out;
+                -o-transition: all 500ms ease-out;
+                transition: all 500ms ease-out;
+
+            }
+            #menu .m2 {
+                width: 8px;
+                height: 60px;
+                background: #47690d;
+                float: right;
+                -webkit-transition: all 500ms ease-out;
+                -moz-transition: all 500ms ease-out;
+                -ms-transition: all 500ms ease-out;
+                -o-transition: all 500ms ease-out;
+                transition: all 500ms ease-out;
+            }
+            #menu a:hover .m2 {
+                width: 15px;
+                height: 60px;
+                background: #628f11;
+                float: right;
+                opacity: 1;
+                -webkit-transition: all 500ms ease-out;
+                -moz-transition: all 500ms ease-out;
+                -ms-transition: all 500ms ease-out;
+                -o-transition: all 500ms ease-out;
+                transition: all 500ms ease-out;
+            }
+            #logopasek {
+                width: 8px;
+                height: 90px;
+                background: #628f11;
+                float: left;
+                margin: 10px 0px 0px 10px;
+            }
+            #logotekst {
+                float: left;
+                margin: 20px 0px 0px 15px;
+                color: #818080;
+                font-size: 15px;
+                line-height: 24px;
+                opacity: 1;
+            }
+            #imagespasek {
+                width: 8px;
+                height: 90px;
+                background: #628f11;
+                float: right;
+                margin: 0px 0px 0px 10px;
+                opacity: 0.7;
+            }
+            #imagepasek2 {
+                width: 380px;
+                height: 90px;
+                background: #000;
+                padding-right: 8px;
+                opacity: 0.7;
+                margin: 0px 0px 0px 30px;
+                float: right;
+                -webkit-transition: all 500ms ease-out;
+                -moz-transition: all 500ms ease-out;
+                -ms-transition: all 500ms ease-out;
+                -o-transition: all 500ms ease-out;
+                transition: all 500ms ease-out;
+            }
+            #imagepasek2:hover {
+                width: 380px;
+                height: 90px;
+                background: #000;
+                padding-right: 8px;
+                opacity: 1;
+                margin: 0px 0px 0px 30px;
+                float: right;
+                -webkit-transition: all 500ms ease-out;
+                -moz-transition: all 500ms ease-out;
+                -ms-transition: all 500ms ease-out;
+                -o-transition: all 500ms ease-out;
+                transition: all 500ms ease-out;
+            }
+            #imagepasek2 img {
+                margin:12px 1px 0px 4px;
+                float: right;
+                border: 3px solid #000000;
+                cursor: pointer;
+            }
+            #imagepasek2 img:hover {
+                margin:12px 1px 0px 4px;
+                float: right;
+                opacity: 1;
+                border: 3px solid #628f11;
+            }
+
+            #imagepasek2 img:first-child {
+                margin:12px 4px 0px 4px;
+            }
+            #footer {
+                position:absolute;
+                bottom:0;
+                width:45%;
+                height:85px;		/* Wysokość nagłówka */
+                z-index: 10;
+                margin: 0px 0px 70px 0px;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <script>
+
+         $(document).ready(function() {
+             var licztlo = 0;
+             zmianatla();
+             function zmianatla()
+                {
+                var tla = new Array('slider1.jpg','slider2.jpg','slider3.jpg','slider4.jpg','slider5.jpg');
+                var sciezka = 'images/';
+                    $('#tlo').fadeOut(800).queue(function(){
+                        $('#tlo').attr('src',sciezka + tla[licztlo]).fadeIn(800);
+                        var liczborder = licztlo-1;
+                        if(liczborder < 0 ) liczborder = tla.length-1;
+                        $('#z'+licztlo).css({'border':'3px solid #628f11'}).animate({
+                                'borderTopColor': '#628f11',
+                                'borderBottomColor': '#628f11',
+                                'borderLeftColor': '#628f11',
+                                'borderRightColor': '#628f11'
+                            }, 'slow');
+                        $('#z'+liczborder).css({'border':'3px solid #000000'}).animate({
+                                'borderTopColor': '#000',
+                                'borderBottomColor': '#000',
+                                'borderLeftColor': '#000',
+                                'borderRightColor': '#000'
+                            }, 'slow');
+                        $(this).dequeue();
+                    });
+                    console.log(sciezka + tla[licztlo]);
+                    licztlo++;
+
+                 if(licztlo >= tla.length) licztlo = 0;
+                 setTimeout(zmianatla,4000);
+                };
+             $(".various").fancybox({
+                //maxWidth	: 800,
+                //maxHeight	: 600,
+                padding: 1,
+                fitToView	: false,
+                width		: '95%',
+                height		: '95%',
+                autoSize	: false,
+                closeClick	: false,
+
+                openEffect  : 'fade',
+				closeEffect : 'fade',
+
+				openEffect : 'fade',
+				openSpeed  : 800,
+
+				closeEffect : 'fade',
+				closeSpeed  : 800,
+            });
+
+         });
+
+        </script>
+        <div id="lewy">
+            <div id="menu">
+                <a href="home.html" class="various" data-fancybox-type="iframe">
+                <div class="m2"></div>
+                <div class="m1">HOME</div>
+                </a>
+                <a href="#" class="various" data-fancybox-type="iframe">
+                <div class="m2"></div>
+                <div class="m1">BIOGRAFIA</div>
+                </a>
+                <a href="media.html" class="various" data-fancybox-type="iframe">
+                <div class="m2"></div>
+                <div class="m1">MEDIA</div>
+                </a>
+                <a href="kalendarz.html" class="various" data-fancybox-type="iframe">
+                <div class="m2"></div>
+                <div class="m1">KALENDARZ</div>
+                </a>
+                <a href="#">
+                <div class="m2"></div>
+                <div class="m1">KONTAKT</div>
+                </a>
+
+            </div>
+            <div id="footer">
+                <div id="imagespasek"></div>
+                <div id="imagepasek2">
+                    <img src="images/ico1.jpg" id="z0" />
+                    <img src="images/ico2.jpg" id="z1" />
+                    <img src="images/ico3.jpg" id="z2" />
+                    <img src="images/ico4.jpg" id="z3" />
+                    <img src="images/ico5.jpg" id="z4" />
+                </div>
+
+            </div>
+        </div>
+        <div id="prawy">
+            <div id="logo">
+                <img src="images/logo2.png" />
+                <br />
+                <div id="logopasek"></div>
+                <div id="logotekst">
+                <span>Przed odsłuchaniem zapoznaj się z treścią ulotki dołączonej</span><br />
+                <span>do opakowania bądź skonsultuj sie z psychiatrą lub psychoterapeutą</span><br />
+                <span>gdyż każdy dźwięk tu zagrany zagraża twojemu życiu lub zdrowiu</span>
+                </div>
+
+
+            </div>
+
+
+            <img id="tlo" src="images/slider1.jpg" />
+
+
+
+
+        </div>
+    </body>
+</html>
